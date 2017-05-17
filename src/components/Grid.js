@@ -2,13 +2,15 @@ import React from 'react';
 import {View, Dimensions} from 'react-native';
 import Tile from './Tile';
 
-const {WIDTH, HEIGHT} = Dimensions.get('window');
+const {WIDTH} = Dimensions.get('window');
 
 export default class Grid extends React.Component {
-  generateRow(size, tileWidth) {
+  generateRow(size, tileSize) {
+    const tiles = Array.from({length: size}).map(() => <Tile color="red" size={tileSize}/>);
+
     return (
       <View style={{flexDirection: 'row'}}>
-        {Array.from({length: size}).map(() => <Tile color="red" size={tileWidth}/>)}
+        {tiles}
       </View>
     )
   }
@@ -19,7 +21,7 @@ export default class Grid extends React.Component {
 
     return (
       <View style={{flexDirection: 'column'}}>
-        {Array.from({length: size}).map(() => this.generateRow(size, tileWidth))}
+        {Array.from({length: size}).fill(1).map(() => this.generateRow(size, tileWidth))}
       </View>
     );
   }

@@ -15,7 +15,7 @@ export default class Palette extends React.Component {
     const tiles = colors.map(color => <Tile color={color} size={tileSize} onPress={this._onPress}/>);
 
     return (
-      <View style={{flex: 1, flexDirection: 'row'}}>
+      <View style={{flexDirection: 'row'}}>
         {tiles}
       </View>
     );
