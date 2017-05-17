@@ -1,0 +1,6 @@
+# Dependencies
+.expo
+node_modules
+
+# Misc
+.idea
