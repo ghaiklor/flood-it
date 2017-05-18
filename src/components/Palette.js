@@ -11,12 +11,8 @@ export default class Palette extends React.Component {
   render() {
     const {colors} = this.props;
     const tileSize = WIDTH / colors.length;
-    const tiles = colors.map(color => <Tile key={color} color={color} size={tileSize} onPress={this._onPress}/>);
+    const tiles = colors.map((color, i) => <Tile key={i} color={color} size={tileSize} onPress={this._onPress}/>);
 
-    return (
-      <View style={{flexDirection: 'row'}}>
-        {tiles}
-      </View>
-    );
+    return <View style={{flexDirection: 'row'}}>{tiles}</View>;
   }
 }

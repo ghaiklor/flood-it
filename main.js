@@ -12,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Grid size={6}/>
+        <Grid size={14}/>
         <Palette colors={COLORS}/>
       </View>
     );
