@@ -4,11 +4,11 @@
  * Keep in mind that game field is a rectangle, so size of a field is actually [size, size].
  *
  * @param {Number} size Size of a game field, i.e. 14
- * @param {Number} colors How many random colors to apply
+ * @param {Number} count How many random colors to apply
  * @returns {Array} Returns an array of game field with a random colors indexes inside
  */
-export default function (size, colors) {
+export default function (size, count) {
   return Array
     .from({length: size * size})
-    .map(() => Math.floor(Math.random() * (colors - 1)));
+    .map(() => Math.floor(Math.random() * count));
 }

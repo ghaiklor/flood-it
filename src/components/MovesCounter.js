@@ -3,19 +3,19 @@ import {StyleSheet, View, Text} from 'react-native';
 import {connect} from 'react-redux';
 
 const mapStateToProps = state => ({
-  moves: state.game.moves,
-  size: state.configuration.size,
-  level: state.configuration.level
+  fieldSize: state.fieldSize,
+  colorsCount: state.colorsCount,
+  spentMoves: state.spentMoves,
 });
 
 class MovesCounter extends React.Component {
   render() {
-    const {moves, size, level} = this.props;
-    const maxMoves = Math.floor(25 * ((size + size) * level) / ((14 + 14) * 6));
+    const {spentMoves, fieldSize, colorsCount} = this.props;
+    const maxMoves = Math.floor(25 * ((fieldSize + fieldSize) * colorsCount) / ((14 + 14) * 6));
 
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>{moves}</Text>
+        <Text style={styles.text}>{spentMoves}</Text>
         <Text style={styles.text}>/</Text>
         <Text style={styles.text}>{maxMoves}</Text>
       </View>

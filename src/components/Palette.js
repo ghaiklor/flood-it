@@ -9,26 +9,26 @@ const MAX_HEIGHT = 80;
 const {width: WINDOWS_WIDTH} = Dimensions.get('window');
 
 const mapStateToProps = state => ({
-  level: state.configuration.level,
-  currentColor: state.game.currentColor
+  colorsCount: state.colorsCount,
+  currentColorIndex: state.currentColorIndex
 });
 
 const mapDispatchToProps = dispatch => ({
-  onPress: color => dispatch(runColor(color))
+  onPress: colorIndex => dispatch(runColor(colorIndex))
 });
 
 class Palette extends React.Component {
-  createTile(size, color, i) {
-    const {currentColor, onPress} = this.props;
+  createTile(size, color, colorIndex) {
+    const {currentColorIndex, onPress} = this.props;
 
-    if (currentColor === color) return <Tile key={i} color={color} size={size}/>;
+    if (currentColorIndex === colorIndex) return <Tile key={colorIndex} color={color} size={size}/>;
 
-    return <Tile key={i} color={color} size={size} onPress={onPress.bind(this, color)}/>;
+    return <Tile key={colorIndex} color={color} size={size} onPress={onPress.bind(this, colorIndex)}/>;
   }
 
   render() {
-    const {level} = this.props;
-    const colors = COLORS.slice(0, level);
+    const {colorsCount} = this.props;
+    const colors = COLORS.slice(0, colorsCount);
     const tileSize = Math.min(MAX_HEIGHT, WINDOWS_WIDTH / colors.length);
     const tiles = colors.map(this.createTile.bind(this, tileSize));
 

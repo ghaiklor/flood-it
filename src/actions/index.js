@@ -1,13 +1,13 @@
-import * as TYPES from './types';
+import * as TYPES from '../actions/types';
 
 /**
  * Creates an action for making a move with selected color.
  *
- * @param {Number} color Index of a color from {@link COLORS} array
+ * @param {Number} colorIndex Index of a color from {@link COLORS} array
  * @returns {{type: String, color: Number}}
  */
-export function runColor(color) {
-  return {type: TYPES.RUN_COLOR, color};
+export function runColor(colorIndex) {
+  return {type: TYPES.RUN_COLOR, color: colorIndex};
 }
 
 /**

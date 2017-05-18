@@ -6,7 +6,7 @@ import COLORS from '../constants/colors';
 
 const {width: WIDTH} = Dimensions.get('window');
 
-const mapStateToProps = state => ({field: state.game.field});
+const mapStateToProps = state => ({field: state.field});
 
 class Grid extends React.Component {
   makeRow(index, tiles) {
@@ -22,7 +22,7 @@ class Grid extends React.Component {
   render() {
     const {field} = this.props;
     const size = Math.sqrt(field.length);
-    const tileWidth = (WIDTH - 40) / size;
+    const tileWidth = WIDTH / size;
     const tiles = field.map((color, i) => <Tile key={i} color={COLORS[color]} size={tileWidth}/>);
 
     return (
