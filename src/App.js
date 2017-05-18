@@ -14,8 +14,13 @@ class App extends React.Component {
           <NewGameButton/>
         </View>
 
-        <Grid/>
-        <Palette/>
+        <View style={styles.game}>
+          <Grid/>
+        </View>
+
+        <View style={styles.palette}>
+          <Palette/>
+        </View>
       </View>
     )
   }
@@ -23,11 +28,28 @@ class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: '#FFFFFF',
   },
-  header: {},
-  game: {},
-  palette: {}
+  header: {
+    flex: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20
+  },
+  game: {
+    flex: 0,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20
+  },
+  palette: {
+    position: 'absolute',
+    left: 0,
+    bottom: 0
+  }
 });
 
 export default App;

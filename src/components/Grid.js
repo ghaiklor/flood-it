@@ -21,7 +21,7 @@ class Grid extends React.Component {
   render() {
     const {field} = this.props;
     const size = Math.sqrt(field.length);
-    const tileWidth = WIDTH / size;
+    const tileWidth = (WIDTH - 40) / size;
     const tiles = field.map((color, i) => <Tile key={i} color={color} size={tileWidth}/>);
 
     return (

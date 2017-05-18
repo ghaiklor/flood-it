@@ -20,9 +20,11 @@ class MovesCounter extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 0,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: 10,
   },
   text: {
     fontWeight: 'bold',
