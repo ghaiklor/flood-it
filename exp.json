@@ -1,12 +1,12 @@
 {
   "name": "flood-it",
-  "description": "An empty new project",
+  "description": "Flood It! is a simple addictive strategy game in which you have to flood the whole game board with one color",
   "slug": "flood-it",
   "privacy": "public",
   "sdkVersion": "16.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
-  "primaryColor": "#cccccc",
+  "primaryColor": "#CCCCCC",
   "icon": "./assets/icons/app.png",
   "loading": {
     "icon": "./assets/icons/loading.png",

@@ -1,7 +1,7 @@
 {
   "name": "flood-it",
-  "version": "0.0.0",
-  "description": "Hello Expo!",
+  "version": "1.0.0",
+  "description": "Flood It! is a simple addictive strategy game in which you have to flood the whole game board with one color",
   "author": "ghaiklor",
   "private": true,
   "main": "main.js",
