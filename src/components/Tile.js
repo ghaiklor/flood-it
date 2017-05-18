@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, TouchableOpacity} from 'react-native';
 
-export default class Tile extends React.Component {
+class Tile extends React.Component {
   render() {
     const {color, size, onPress} = this.props;
     const style = {backgroundColor: color, width: size, height: size};
@@ -11,3 +11,5 @@ export default class Tile extends React.Component {
     return onPress ? touchableTile : tile;
   }
 }
+
+export default Tile;

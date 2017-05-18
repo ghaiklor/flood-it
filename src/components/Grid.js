@@ -1,15 +1,13 @@
 import React from 'react';
 import {View, Dimensions} from 'react-native';
+import {connect} from 'react-redux';
 import Tile from './Tile';
-import COLORS from '../constants/colors';
 
 const {width: WIDTH} = Dimensions.get('window');
 
-export default class Grid extends React.Component {
-  state = {
-    field: Array.from({length: 14 * 14}).map(() => COLORS[Math.floor(Math.random() * COLORS.length)])
-  };
+const mapStateToProps = state => ({field: state.field});
 
+class Grid extends React.Component {
   makeRow(index, tiles) {
     const {size} = this.props;
 
@@ -21,10 +19,9 @@ export default class Grid extends React.Component {
   }
 
   render() {
-    const {size} = this.props;
-    const {field} = this.state;
+    const {size, field} = this.props;
     const tileWidth = WIDTH / size;
-    const tiles = field.map((color, i) => <Tile key={i} color={color} size={tileWidth}/>)
+    const tiles = field.map((color, i) => <Tile key={i} color={color} size={tileWidth}/>);
 
     return (
       <View style={{flexDirection: 'column'}}>
@@ -33,3 +30,5 @@ export default class Grid extends React.Component {
     );
   }
 }
+
+export default connect(mapStateToProps)(Grid);

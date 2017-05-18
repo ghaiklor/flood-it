@@ -1,28 +1,29 @@
 import Expo from 'expo';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import reducers from './src/reducers';
+import App from './src/App';
 import COLORS from './src/constants/colors';
 
-import Grid from './src/components/Grid';
-import Palette from './src/components/Palette';
-import Tile from './src/components/Tile';
+const SIZE = 14;
+const initialField = Array.from({length: SIZE * SIZE}).map(() => COLORS[Math.floor(Math.random() * COLORS.length)]);
+const initialState = {
+  colors: COLORS,
+  currentColor: initialField[0],
+  field: initialField
+};
 
-class App extends React.Component {
+const store = createStore(reducers, initialState);
+
+class FloodIt extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Grid size={14}/>
-        <Palette colors={COLORS}/>
-      </View>
+      <Provider store={store}>
+        <App/>
+      </Provider>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#FFFFFF',
-  },
-});
-
-Expo.registerRootComponent(App);
+Expo.registerRootComponent(FloodIt);
