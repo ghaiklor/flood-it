@@ -7,7 +7,7 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Grid size={14}/>
+        <Grid/>
         <Palette/>
       </View>
     )

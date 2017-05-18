@@ -2,7 +2,7 @@ import Expo from 'expo';
 import React from 'react';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import reducers from './src/reducers';
+import reducer from './src/reducers';
 import App from './src/App';
 import COLORS from './src/constants/colors';
 
@@ -14,7 +14,7 @@ const initialState = {
   field: initialField
 };
 
-const store = createStore(reducers, initialState);
+const store = createStore(reducer, initialState);
 
 class FloodIt extends React.Component {
   render() {

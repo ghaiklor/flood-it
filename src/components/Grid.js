@@ -9,7 +9,7 @@ const mapStateToProps = state => ({field: state.field});
 
 class Grid extends React.Component {
   makeRow(index, tiles) {
-    const {size} = this.props;
+    const size = Math.sqrt(tiles.length);
 
     return (
       <View key={index} style={{flexDirection: 'row'}}>
@@ -19,7 +19,8 @@ class Grid extends React.Component {
   }
 
   render() {
-    const {size, field} = this.props;
+    const {field} = this.props;
+    const size = Math.sqrt(field.length);
     const tileWidth = WIDTH / size;
     const tiles = field.map((color, i) => <Tile key={i} color={color} size={tileWidth}/>);
 
