@@ -1,6 +1,7 @@
 import * as TYPES from '../actions/types';
 import COLORS from '../constants/colors';
 import getAdjacentIndexes from '../common/getAdjacentIndexes';
+import generateNewField from '../common/generateNewField';
 
 const initialField = Array.from({length: 14 * 14}).map(() => COLORS[Math.floor(Math.random() * COLORS.length)]);
 const initialState = {
@@ -30,6 +31,10 @@ export default function (state = initialState, action) {
       }
 
       return Object.assign({}, state, {field, currentColor: newColor, moves: state.moves + 1});
+    case TYPES.NEW_GAME:
+      const newField = generateNewField(14, COLORS);
+
+      return Object.assign({}, state, {field: newField, currentColor: newField[0], moves: 0});
     default:
       return state;
   }
