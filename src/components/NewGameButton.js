@@ -3,7 +3,9 @@ import {connect} from 'react-redux';
 import {StyleSheet, TouchableOpacity, Image} from 'react-native';
 import {newGame} from '../actions';
 
-const mapDispatchToProps = dispatch => ({onPress: () => dispatch(newGame())});
+const mapDispatchToProps = dispatch => ({
+  onPress: () => dispatch(newGame())
+});
 
 class NewGameButton extends React.Component {
   render() {

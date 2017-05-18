@@ -6,7 +6,9 @@ import COLORS from '../constants/colors';
 
 const {width: WIDTH} = Dimensions.get('window');
 
-const mapStateToProps = state => ({field: state.field});
+const mapStateToProps = state => ({
+  field: state.field
+});
 
 class Grid extends React.Component {
   makeRow(index, tiles) {

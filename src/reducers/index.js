@@ -2,10 +2,12 @@ import * as TYPES from '../actions/types';
 import getAdjacentIndexes from '../common/getAdjacentIndexes';
 import generateNewField from '../common/generateNewField';
 
-const initialField = generateNewField(14, 3);
+const INITIAL_FIELD_SIZE = 14;
+const INITIAL_COLORS_COUNT = 5;
+const initialField = generateNewField(INITIAL_FIELD_SIZE, INITIAL_COLORS_COUNT);
 const initialState = {
-  fieldSize: 10,
-  colorsCount: 3,
+  fieldSize: INITIAL_FIELD_SIZE,
+  colorsCount: INITIAL_COLORS_COUNT,
   spentMoves: 0,
   currentColorIndex: initialField[0],
   field: initialField
