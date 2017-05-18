@@ -6,7 +6,7 @@ import Tile from '../components/Tile';
 
 const {width: WIDTH} = Dimensions.get('window');
 
-const mapStateToProps = state => ({currentColor: state.currentColor, colors: state.colors});
+const mapStateToProps = state => ({currentColor: state.game.currentColor, colors: state.configuration.colors});
 const mapDispatchToProps = dispatch => ({onPress: color => dispatch(runColor(color))});
 
 class Palette extends React.Component {

@@ -1,37 +1,5 @@
-import * as TYPES from '../actions/types';
+import {combineReducers} from 'redux';
+import configuration from './configuration';
+import game from './game';
 
-function getAdjacents(array, index) {
-  const size = Math.sqrt(array.length);
-  const top = index - size;
-  const right = (index % (size - 1)) ? index + 1 : -1;
-  const bottom = index + size;
-  const left = (index % size) ? index - 1 : -1;
-
-  return {top, right, bottom, left};
-}
-
-export default function floodIt(state, action) {
-  switch (action.type) {
-    case TYPES.RUN_COLOR:
-      const field = [].concat(state.field);
-      const oldColor = field[0];
-      const newColor = action.color;
-      const job = [0];
-
-      while (job.length) {
-        const curIndex = job.pop();
-        const {top, right, bottom, left} = getAdjacents(field, curIndex);
-
-        field[curIndex] = newColor;
-
-        if (field[top] === oldColor) job.push(top);
-        if (field[right] === oldColor) job.push(right);
-        if (field[bottom] === oldColor) job.push(bottom);
-        if (field[left] === oldColor) job.push(left);
-      }
-
-      return Object.assign({}, state, {field, currentColor: newColor, moves: state.moves + 1});
-    default:
-      return state;
-  }
-}
+export default combineReducers({configuration, game});

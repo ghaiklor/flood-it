@@ -5,7 +5,7 @@ import Tile from './Tile';
 
 const {width: WIDTH} = Dimensions.get('window');
 
-const mapStateToProps = state => ({field: state.field});
+const mapStateToProps = state => ({field: state.game.field});
 
 class Grid extends React.Component {
   makeRow(index, tiles) {

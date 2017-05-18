@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {connect} from 'react-redux';
 
-const mapStateToProps = state => ({moves: state.moves, maxMoves: state.maxMoves});
+const mapStateToProps = state => ({moves: state.game.moves, maxMoves: state.configuration.maxMoves});
 
 class MovesCounter extends React.Component {
   render() {
