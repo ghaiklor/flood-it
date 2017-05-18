@@ -16,7 +16,7 @@ class MovesCounter extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>{spentMoves}</Text>
-        <Text style={styles.text}>/</Text>
+        <Text style={styles.text}>\</Text>
         <Text style={styles.text}>{maxMoves}</Text>
       </View>
     )
@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
   },
   text: {
     fontWeight: 'bold',

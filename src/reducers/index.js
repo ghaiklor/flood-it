@@ -23,7 +23,7 @@ export default function (state = initialState, action) {
 
       while (job.length) {
         const curIndex = job.pop();
-        const {top, right, bottom, left} = getAdjacentIndexes(field, curIndex);
+        const {top, right, bottom, left} = getAdjacentIndexes(field.length, curIndex);
 
         field[curIndex] = newColor;
 
@@ -35,11 +35,13 @@ export default function (state = initialState, action) {
 
       return Object.assign({}, state, {spentMoves: state.spentMoves + 1, currentColorIndex: newColor, field});
     }
+
     case TYPES.NEW_GAME: {
       const field = generateNewField(state.fieldSize, state.colorsCount);
 
       return Object.assign({}, state, {spentMoves: 0, currentColorIndex: field[0], field});
     }
+
     default:
       return state;
   }

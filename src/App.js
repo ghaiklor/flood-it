@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
+import Grid from './components/Grid';
 import MovesCounter from './components/MovesCounter';
 import NewGameButton from './components/NewGameButton';
-import Grid from './components/Grid';
 import Palette from './components/Palette';
 
 class App extends React.Component {
@@ -36,19 +36,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20
+    paddingTop: 25,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 10
   },
   game: {
-    flex: 0,
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flex: 1,
+    justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20
   },
   palette: {
-    position: 'absolute',
-    left: 0,
-    bottom: 0
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center'
   }
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {StyleSheet, TouchableOpacity, Image} from 'react-native';
+import {TouchableOpacity, Image} from 'react-native';
 import {newGame} from '../actions';
 
 const mapDispatchToProps = dispatch => ({
@@ -13,17 +13,10 @@ class NewGameButton extends React.Component {
 
     return (
       <TouchableOpacity onPress={onPress}>
-        <Image style={styles.image} source={require('../../assets/icons/new-game.png')}/>
+        <Image style={{width: 50, height: 50}} source={require('../../assets/icons/new-game.png')}/>
       </TouchableOpacity>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  image: {
-    width: 50,
-    height: 50
-  }
-});
 
 export default connect(null, mapDispatchToProps)(NewGameButton);
