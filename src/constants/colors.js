@@ -5,4 +5,6 @@ export default [
   '#FFCC66',
   '#800080',
   '#00FFFF',
+  '#6666FF',
+  '#FF00FF',
 ];

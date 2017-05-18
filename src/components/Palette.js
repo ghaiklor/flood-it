@@ -3,11 +3,19 @@ import {View, Dimensions} from 'react-native';
 import {connect} from 'react-redux';
 import {runColor} from '../actions';
 import Tile from '../components/Tile';
+import COLORS from '../constants/colors';
 
-const {width: WIDTH} = Dimensions.get('window');
+const MAX_HEIGHT = 80;
+const {width: WINDOWS_WIDTH} = Dimensions.get('window');
 
-const mapStateToProps = state => ({currentColor: state.game.currentColor, colors: state.configuration.colors});
-const mapDispatchToProps = dispatch => ({onPress: color => dispatch(runColor(color))});
+const mapStateToProps = state => ({
+  level: state.configuration.level,
+  currentColor: state.game.currentColor
+});
+
+const mapDispatchToProps = dispatch => ({
+  onPress: color => dispatch(runColor(color))
+});
 
 class Palette extends React.Component {
   createTile(size, color, i) {
@@ -19,8 +27,9 @@ class Palette extends React.Component {
   }
 
   render() {
-    const {colors} = this.props;
-    const tileSize = WIDTH / colors.length;
+    const {level} = this.props;
+    const colors = COLORS.slice(0, level);
+    const tileSize = Math.min(MAX_HEIGHT, WINDOWS_WIDTH / colors.length);
     const tiles = colors.map(this.createTile.bind(this, tileSize));
 
     return <View style={{flexDirection: 'row'}}>{tiles}</View>;

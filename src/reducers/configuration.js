@@ -1,9 +1,6 @@
-import COLORS from '../constants/colors';
-
 const initialState = {
-  colors: COLORS,
-  size: 14,
-  maxMoves: 20,
+  size: 10,
+  level: 3,
 };
 
 export default function (state = initialState, action) {

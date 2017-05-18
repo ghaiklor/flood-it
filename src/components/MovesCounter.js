@@ -2,11 +2,16 @@ import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {connect} from 'react-redux';
 
-const mapStateToProps = state => ({moves: state.game.moves, maxMoves: state.configuration.maxMoves});
+const mapStateToProps = state => ({
+  moves: state.game.moves,
+  size: state.configuration.size,
+  level: state.configuration.level
+});
 
 class MovesCounter extends React.Component {
   render() {
-    const {moves, maxMoves} = this.props;
+    const {moves, size, level} = this.props;
+    const maxMoves = Math.floor(25 * ((size + size) * level) / ((14 + 14) * 6));
 
     return (
       <View style={styles.container}>
