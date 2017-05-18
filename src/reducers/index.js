@@ -3,9 +3,9 @@ import * as TYPES from '../actions/types';
 function getAdjacents(array, index) {
   const size = Math.sqrt(array.length);
   const top = index - size;
-  const right = index + 1;
+  const right = (index % (size - 1)) ? index + 1 : -1;
   const bottom = index + size;
-  const left = index - 1;
+  const left = (index % size) ? index - 1 : -1;
 
   return {top, right, bottom, left};
 }
@@ -30,7 +30,7 @@ export default function floodIt(state, action) {
         if (field[left] === oldColor) job.push(left);
       }
 
-      return Object.assign({}, state, {field, currentColor: newColor});
+      return Object.assign({}, state, {field, currentColor: newColor, moves: state.moves + 1});
     default:
       return state;
   }

@@ -9,6 +9,8 @@ import COLORS from './src/constants/colors';
 const SIZE = 14;
 const initialField = Array.from({length: SIZE * SIZE}).map(() => COLORS[Math.floor(Math.random() * COLORS.length)]);
 const initialState = {
+  moves: 0,
+  maxMoves: 15,
   colors: COLORS,
   currentColor: initialField[0],
   field: initialField
