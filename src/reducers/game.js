@@ -3,7 +3,7 @@ import COLORS from '../constants/colors';
 import getAdjacentIndexes from '../common/getAdjacentIndexes';
 import generateNewField from '../common/generateNewField';
 
-const initialField = Array.from({length: 14 * 14}).map(() => COLORS[Math.floor(Math.random() * COLORS.length)]);
+const initialField = generateNewField(14, 5);
 const initialState = {
   moves: 0,
   currentColor: initialField[0],
@@ -32,7 +32,7 @@ export default function (state = initialState, action) {
 
       return Object.assign({}, state, {field, currentColor: newColor, moves: state.moves + 1});
     case TYPES.NEW_GAME:
-      const newField = generateNewField(14, COLORS);
+      const newField = generateNewField(14, state.configuration.level);
 
       return Object.assign({}, state, {field: newField, currentColor: newField[0], moves: 0});
     default:
