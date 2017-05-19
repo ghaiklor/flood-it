@@ -5,7 +5,7 @@
  *
  * @param {Number} size Size of a game field, i.e. 14
  * @param {Number} count How many random colors to apply
- * @returns {Array} Returns an array of game field with a random colors indexes inside
+ * @returns {Array<Number>} Returns an array of game field with a random colors indexes inside
  */
 export default function (size, count) {
   return Array
