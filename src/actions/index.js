@@ -1,5 +1,4 @@
 import * as TYPES from '../actions/types';
-import calculateMaxMoves from '../common/calculateMaxMoves';
 
 /**
  * Creates an action for making a move with selected color.
@@ -13,8 +12,7 @@ export function runColor(colorIndex) {
   return function (dispatch, getState) {
     dispatch({type: TYPES.RUN_COLOR, color: colorIndex});
 
-    const {fieldSize, colorsCount, spentMoves, done} = getState();
-    const maxMoves = calculateMaxMoves(fieldSize, colorsCount);
+    const {spentMoves, maxMoves, done} = getState();
 
     if (done === 100) return dispatch(increaseDifficulty()) && dispatch(newGame());
     if (spentMoves >= maxMoves) return dispatch(decreaseDifficulty()) && dispatch(newGame());
