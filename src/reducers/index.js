@@ -41,7 +41,7 @@ export default function (state = initialState, action) {
       }
 
       const spentMoves = state.spentMoves + 1;
-      const done = Math.ceil(field.filter(colorIndex => colorIndex === newColor).length * 100 / field.length);
+      const done = Math.floor(field.filter(colorIndex => colorIndex === newColor).length * 100 / field.length);
 
       return {...state, field, currentColorIndex: newColor, spentMoves, done};
     }
