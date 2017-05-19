@@ -6,5 +6,5 @@
  * @returns {Number} Returns a count of maximum moves allowed
  */
 export default function (size, count) {
-  return Math.floor(27 * ((size + size) * count) / ((14 + 14) * 6));
+  return Math.floor(30 * ((size + size) * count) / ((14 + 14) * 6));
 }
