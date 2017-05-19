@@ -81,11 +81,3 @@ it('Should properly find adjacent indexes for every cell in an array 3x3[8]', ()
   assert.equal(bottom, -1);
   assert.equal(left, 7);
 });
-
-/**
- *
- * 0 1 2
- * 3 4 5
- * 6 7 8
- *
- */
