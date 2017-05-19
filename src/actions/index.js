@@ -11,7 +11,8 @@ export function runColor(colorIndex) {
     const {fieldSize, colorsCount, spentMoves, done} = getState();
     const maxMoves = Math.floor(25 * ((fieldSize + fieldSize) * colorsCount) / ((14 + 14) * 6));
 
-    if ((spentMoves >= maxMoves - 1) || done === 100) return dispatch(newGame());
+    if (spentMoves >= maxMoves - 1) return dispatch(decreaseDifficulty()) && dispatch(newGame());
+    if (done === 100) return dispatch(increaseDifficulty()) && dispatch(newGame());
 
     return dispatch({type: TYPES.RUN_COLOR, color: colorIndex});
   }
@@ -24,4 +25,12 @@ export function runColor(colorIndex) {
  */
 export function newGame() {
   return {type: TYPES.NEW_GAME};
+}
+
+export function increaseDifficulty() {
+  return {type: TYPES.INCREASE_DIFFICULTY};
+}
+
+export function decreaseDifficulty() {
+  return {type: TYPES.DECREASE_DIFFICULTY};
 }
