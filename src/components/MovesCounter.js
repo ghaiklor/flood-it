@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {connect} from 'react-redux';
+import calculateMaxMoves from '../common/calculateMaxMoves';
 
 const mapStateToProps = state => ({
   fieldSize: state.fieldSize,
@@ -12,7 +13,7 @@ const mapStateToProps = state => ({
 class MovesCounter extends React.Component {
   render() {
     const {spentMoves, fieldSize, colorsCount, done} = this.props;
-    const maxMoves = Math.floor(25 * ((fieldSize + fieldSize) * colorsCount) / ((14 + 14) * 6));
+    const maxMoves = calculateMaxMoves(fieldSize, colorsCount);
 
     return (
       <View style={styles.container}>
