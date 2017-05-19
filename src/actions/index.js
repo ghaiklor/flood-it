@@ -1,7 +1,10 @@
 import * as TYPES from '../actions/types';
+import calculateMaxMoves from '../common/calculateMaxMoves';
 
 /**
  * Creates an action for making a move with selected color.
+ * Also, this action checks for win\lose states.
+ * If so, it triggers the change of difficulty and new game actions.
  *
  * @param {Number} colorIndex Index of a color from {@link COLORS} array
  * @returns {Function} Returns a redux-thunk function
@@ -11,7 +14,7 @@ export function runColor(colorIndex) {
     dispatch({type: TYPES.RUN_COLOR, color: colorIndex});
 
     const {fieldSize, colorsCount, spentMoves, done} = getState();
-    const maxMoves = Math.floor(25 * ((fieldSize + fieldSize) * colorsCount) / ((14 + 14) * 6));
+    const maxMoves = calculateMaxMoves(fieldSize, colorsCount);
 
     if (done === 100) return dispatch(increaseDifficulty()) && dispatch(newGame());
     if (spentMoves >= maxMoves) return dispatch(decreaseDifficulty()) && dispatch(newGame());
