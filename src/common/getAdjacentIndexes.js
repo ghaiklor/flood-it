@@ -11,8 +11,8 @@
 export default function (length, index) {
   const size = Math.sqrt(length);
   const top = (index - size) < 0 ? -1 : (index - size);
-  const right = (index === 0 || (index % (size - 1))) ? (index + 1) : -1;
-  const bottom = (index + size) > length ? -1 : (index + size);
+  const right = (index === 0 || ((index + 1) % size)) ? (index + 1) : -1;
+  const bottom = (index + size) >= length ? -1 : (index + size);
   const left = (index % size) ? (index - 1) : -1;
 
   return {top, right, bottom, left};
