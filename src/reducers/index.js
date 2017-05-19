@@ -6,7 +6,7 @@ import generateNewField from '../common/generateNewField';
 const MINIMUM_COLORS_COUNT = 3;
 const MAXIMUM_COLORS_COUNT = 8;
 const MINIMUM_FIELD_SIZE = 6;
-const MAXIMUM_FIELD_SIZE = 26;
+const MAXIMUM_FIELD_SIZE = 20;
 
 const initialField = generateNewField(MINIMUM_FIELD_SIZE, MINIMUM_COLORS_COUNT);
 const initialState = {
