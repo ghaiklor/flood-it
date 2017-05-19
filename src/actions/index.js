@@ -7,7 +7,14 @@ import * as TYPES from '../actions/types';
  * @returns {{type: String, color: Number}}
  */
 export function runColor(colorIndex) {
-  return {type: TYPES.RUN_COLOR, color: colorIndex};
+  return function (dispatch, getState) {
+    const {fieldSize, colorsCount, spentMoves, done} = getState();
+    const maxMoves = Math.floor(25 * ((fieldSize + fieldSize) * colorsCount) / ((14 + 14) * 6));
+
+    if ((spentMoves >= maxMoves - 1) || done === 100) return dispatch(newGame());
+
+    return dispatch({type: TYPES.RUN_COLOR, color: colorIndex});
+  }
 }
 
 /**

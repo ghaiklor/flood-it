@@ -4,10 +4,11 @@ import {AsyncStorage} from 'react-native';
 import {Provider} from 'react-redux';
 import {compose, applyMiddleware, createStore} from 'redux';
 import {persistStore, autoRehydrate} from 'redux-persist';
+import thunk from 'redux-thunk';
 import reducer from './src/reducers';
 import App from './src/App';
 
-const store = createStore(reducer, undefined, compose(applyMiddleware(), autoRehydrate()));
+const store = createStore(reducer, undefined, compose(applyMiddleware(thunk), autoRehydrate()));
 persistStore(store, {storage: AsyncStorage});
 
 class FloodIt extends React.Component {
