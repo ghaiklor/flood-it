@@ -9,6 +9,7 @@ const initialState = {
   fieldSize: INITIAL_FIELD_SIZE,
   colorsCount: INITIAL_COLORS_COUNT,
   spentMoves: 0,
+  done: 0,
   currentColorIndex: initialField[0],
   field: initialField
 };
@@ -33,7 +34,14 @@ export default function (state = initialState, action) {
         if (field[left] === oldColor) job.push(left);
       }
 
-      return Object.assign({}, state, {spentMoves: state.spentMoves + 1, currentColorIndex: newColor, field});
+      const done = field.filter(colorIndex => colorIndex === newColor).length * 100 / field.length;
+
+      return Object.assign({}, state, {
+        spentMoves: state.spentMoves + 1,
+        done: done,
+        currentColorIndex: newColor,
+        field
+      });
     }
 
     case TYPES.NEW_GAME: {

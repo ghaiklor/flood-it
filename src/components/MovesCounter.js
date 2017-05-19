@@ -6,11 +6,12 @@ const mapStateToProps = state => ({
   fieldSize: state.fieldSize,
   colorsCount: state.colorsCount,
   spentMoves: state.spentMoves,
+  done: state.done
 });
 
 class MovesCounter extends React.Component {
   render() {
-    const {spentMoves, fieldSize, colorsCount} = this.props;
+    const {spentMoves, fieldSize, colorsCount, done} = this.props;
     const maxMoves = Math.floor(25 * ((fieldSize + fieldSize) * colorsCount) / ((14 + 14) * 6));
 
     return (
@@ -18,6 +19,7 @@ class MovesCounter extends React.Component {
         <Text style={styles.text}>{spentMoves}</Text>
         <Text style={styles.text}>\</Text>
         <Text style={styles.text}>{maxMoves}</Text>
+        <Text style={styles.text}> ({done}%)</Text>
       </View>
     )
   }
