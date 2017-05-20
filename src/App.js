@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import Grid from './components/Grid';
-import Stats from './components/Stats';
 import NewGameButton from './components/NewGame';
 import Palette from './components/Palette';
+import Stats from './components/Stats';
 
-class App extends React.Component {
+export class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -29,10 +29,12 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
     backgroundColor: '#EEE4DA',
   },
   header: {
-    backgroundColor: 'white',
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -42,11 +44,11 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   game: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    flex: 8,
   },
   palette: {
     flex: 1,
+    flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'center',
   }
