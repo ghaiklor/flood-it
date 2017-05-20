@@ -28,15 +28,23 @@ It will start fill a field with selected color, where start point is left upper 
 - [React Native](https://facebook.github.io/react-native/)
 - [Redux](http://redux.js.org)
 
-## Building
+## Development Flow
 
-You need to have installed [Expo XDE](https://expo.io).
+You can use CLI tool for development server, or use [Expo XDE](https://expo.io).
 
 ```
 git clone git@github.com:ghaiklor/flood-it.git
 cd flood-it
 npm install
 npm test
+npm start
 ```
 
-Open the project in Expo XDE, afterwards you will be able to run it in simulator or a real device.
+## Building
+
+Login with Expo account and build:
+
+```
+npm run login
+npm run build
+```
