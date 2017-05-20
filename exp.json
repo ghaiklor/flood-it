@@ -1,5 +1,5 @@
 {
-  "name": "flood-it",
+  "name": "Flood It!",
   "description": "Flood It! is a simple addictive strategy game in which you have to flood the whole game board with one color",
   "slug": "flood-it",
   "privacy": "public",
@@ -10,7 +10,7 @@
   "icon": "./assets/icons/app.png",
   "loading": {
     "icon": "./assets/icons/app.png",
-    "hideExponentText": false
+    "hideExponentText": true
   },
   "packagerOpts": {
     "assetExts": [
