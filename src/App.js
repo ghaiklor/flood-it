@@ -11,7 +11,7 @@ export class App extends React.Component {
   };
 
   componentDidMount() {
-    Animated.timing(this.state.opacity, {toValue: 1, duration: 1000}).start();
+    Animated.timing(this.state.opacity, {toValue: 1, duration: 1000, useNativeDriver: true}).start();
   }
 
   render() {
