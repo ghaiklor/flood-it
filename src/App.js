@@ -1,14 +1,22 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Animated} from 'react-native';
 import Grid from './components/Grid';
 import NewGameButton from './components/NewGame';
 import Palette from './components/Palette';
 import Stats from './components/Stats';
 
 export class App extends React.Component {
+  state = {
+    opacity: new Animated.Value(0)
+  };
+
+  componentDidMount() {
+    Animated.timing(this.state.opacity, {toValue: 1, duration: 1000}).start();
+  }
+
   render() {
     return (
-      <View style={styles.container}>
+      <Animated.View style={[styles.container, {opacity: this.state.opacity}]}>
         <View style={styles.header}>
           <Stats/>
           <NewGameButton/>
@@ -21,7 +29,7 @@ export class App extends React.Component {
         <View style={styles.palette}>
           <Palette/>
         </View>
-      </View>
+      </Animated.View>
     )
   }
 }
