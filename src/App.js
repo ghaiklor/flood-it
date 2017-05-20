@@ -32,13 +32,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#EEE4DA',
   },
   header: {
+    backgroundColor: 'white',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 25,
-    marginLeft: 15,
-    marginRight: 15,
-    marginBottom: 10,
+    paddingTop: 25,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingBottom: 10,
   },
   game: {
     justifyContent: 'center',

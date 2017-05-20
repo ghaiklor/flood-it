@@ -6,6 +6,8 @@ import Tile from '../components/Tile';
 import COLORS from '../constants/colors';
 
 const PALETTE_HEIGHT = 80;
+const TILE_STYLE = {borderTopLeftRadius: 15, borderTopRightRadius: 15};
+const PALETTE_STYLE = {flexDirection: 'row'};
 const {width: WINDOWS_WIDTH} = Dimensions.get('window');
 
 const mapStateToProps = state => ({
@@ -36,8 +38,5 @@ class Palette extends React.Component {
     return <View style={PALETTE_STYLE}>{tiles}</View>;
   }
 }
-
-const TILE_STYLE = {borderTopLeftRadius: 15, borderTopRightRadius: 15};
-const PALETTE_STYLE = {flexDirection: 'row'};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Palette);

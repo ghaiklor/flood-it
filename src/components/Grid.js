@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Tile from '../components/Tile';
 import COLORS from '../constants/colors';
 
-const {width: WINDOW_WIDTH, height: WINDOW_HEIGHT} = Dimensions.get('window');
+const {width: WINDOW_WIDTH} = Dimensions.get('window');
 
 const mapStateToProps = state => ({
   field: state.field
@@ -21,18 +21,19 @@ class Grid extends React.Component {
     )
   }
 
+  makeGrid(size, tiles) {
+    return Array
+      .from({length: size})
+      .map((_, i) => this.makeRow(i, tiles));
+  }
+
   render() {
     const {field} = this.props;
     const size = Math.sqrt(field.length);
-    const width = Math.ceil(WINDOW_WIDTH / size);
-    const height = Math.ceil(WINDOW_HEIGHT / size / 2);
-    const tiles = field.map((cell, i) => <Tile key={i} color={COLORS[cell]} width={width} height={height}/>);
+    const tileSize = Math.ceil(WINDOW_WIDTH / size);
+    const tiles = field.map((cell, i) => <Tile key={i} color={COLORS[cell]} width={tileSize} height={tileSize}/>);
 
-    return (
-      <View style={{flexDirection: 'column'}}>
-        {Array.from({length: size}).map((_, i) => this.makeRow(i, tiles))}
-      </View>
-    );
+    return <View style={{flexDirection: 'column'}}>{this.makeGrid(size, tiles)}</View>;
   }
 }
 
