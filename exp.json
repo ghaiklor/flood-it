@@ -19,6 +19,10 @@
     ]
   },
   "ios": {
+    "bundleIdentifier": "org.ghaiklor.floodit",
     "supportsTablet": true
+  },
+  "android": {
+    "package": "org.ghaiklor.floodit"
   }
 }
