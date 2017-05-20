@@ -6,6 +6,12 @@
   "private": true,
   "main": "main.js",
   "scripts": {
+    "build": "npm run build:android && npm run build:ios",
+    "build:android": "exp build:android",
+    "build:ios": "exp build:ios",
+    "login": "exp login",
+    "start": "exp start",
+    "status": "exp build:status",
     "test": "jest"
   },
   "dependencies": {
@@ -19,6 +25,7 @@
   },
   "devDependencies": {
     "chai": "3.5.0",
+    "exp": "41.0.0",
     "jest-expo": "1.0.1",
     "react-test-renderer": "15.5.4",
     "sinon": "2.2.0"
