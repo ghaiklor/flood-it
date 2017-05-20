@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import generateNewField from '../../src/common/generateNewField';
+import generateNewField from '../../../src/common/generateNewField';
 
 it('Should properly generate new field with random color indexes', () => {
   const field = generateNewField(3, 3);

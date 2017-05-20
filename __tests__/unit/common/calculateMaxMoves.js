@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import calculateMaxMoves from '../../src/common/calculateMaxMoves';
+import calculateMaxMoves from '../../../src/common/calculateMaxMoves';
 
 it('Should properly calculate maximum moves in a game', () => {
   assert.equal(calculateMaxMoves(6, 3), 6);

@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import getAdjacentIndexes from '../../src/common/getAdjacentIndexes';
+import getAdjacentIndexes from '../../../src/common/getAdjacentIndexes';
 
 it('Should properly find adjacent indexes for every cell in an array 3x3[0]', () => {
   const {top, right, bottom, left} = getAdjacentIndexes(9, 0);

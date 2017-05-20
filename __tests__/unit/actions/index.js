@@ -1,6 +1,6 @@
 import {assert} from 'chai';
 import sinon from 'sinon';
-import * as ACTIONS from '../../src/actions';
+import * as ACTIONS from '../../../src/actions/index';
 
 it('Should properly handle RUN_COLOR action', () => {
   const thunk = ACTIONS.runColor(1);

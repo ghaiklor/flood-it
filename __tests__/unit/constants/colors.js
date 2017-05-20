@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import COLORS from '../../src/constants/colors';
+import COLORS from '../../../src/constants/colors';
 
 it('Should properly export all colors in a game', () => {
   assert.deepEqual(COLORS, [

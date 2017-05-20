@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import * as TYPES from '../../src/actions/types';
+import * as TYPES from '../../../src/actions/types';
 
 it('Should properly export all the action types', () => {
   assert.equal(TYPES.RUN_COLOR, 'RUN_COLOR');

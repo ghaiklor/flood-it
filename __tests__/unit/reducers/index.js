@@ -1,6 +1,6 @@
 import {assert} from 'chai';
-import * as TYPES from '../../src/actions/types';
-import reducer from '../../src/reducers';
+import * as TYPES from '../../../src/actions/types';
+import reducer from '../../../src/reducers/index';
 
 const currentState = {
   currentLevel: 5,
