@@ -4,6 +4,10 @@
 
 _Flood It! is a simple addictive strategy game in which you have to flood the whole game board with one color_
 
+[Download .apk for Android](https://exp-shell-app-assets.s3-us-west-1.amazonaws.com/android%2F%40ghaiklor%2Fflood-it-39baa14c-3d76-11e7-aeb9-0a580a780023-signed.apk)
+
+~~Download .ipa for iOS~~ (I don't have developer account)
+
 ## How to play
 
 You need to fill game field with one color.
