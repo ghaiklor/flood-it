@@ -48,3 +48,7 @@ Login with Expo account and build:
 npm run login
 npm run build
 ```
+
+## License
+
+[GNU GPLv3](./LICENSE)
