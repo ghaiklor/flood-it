@@ -1,7 +1,7 @@
 import 'react-native';
 import {assert} from 'chai';
 import React from 'react';
-import Tile from '../../../src/components/Tile';
+import {Tile} from '../../../src/components/Tile';
 import renderer from 'react-test-renderer';
 
 it('Should properly render a black tile with sizes 30x30', () => {

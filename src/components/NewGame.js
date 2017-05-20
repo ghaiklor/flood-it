@@ -7,7 +7,7 @@ const mapDispatchToProps = dispatch => ({
   onPress: () => dispatch(newGame())
 });
 
-class NewGameButton extends React.Component {
+export class NewGame extends React.Component {
   render() {
     const {onPress} = this.props;
 
@@ -19,4 +19,4 @@ class NewGameButton extends React.Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(NewGameButton);
+export default connect(null, mapDispatchToProps)(NewGame);

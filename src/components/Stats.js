@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
   spentMoves: state.spentMoves,
 });
 
-class Stats extends React.Component {
+export class Stats extends React.Component {
   render() {
     const {maxMoves, spentMoves} = this.props;
 

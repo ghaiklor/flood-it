@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
   field: state.field
 });
 
-class Grid extends React.Component {
+export class Grid extends React.Component {
   makeRow(rowIndex, tiles) {
     const size = Math.sqrt(tiles.length);
 

@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => ({
   onPress: colorIndex => dispatch(runColor(colorIndex))
 });
 
-class Palette extends React.Component {
+export class Palette extends React.Component {
   createTile(width, height, color, colorIndex) {
     const {currentColorIndex, onPress} = this.props;
     const tile = <Tile key={colorIndex} style={TILE_STYLE} color={color} width={width} height={height}/>;
