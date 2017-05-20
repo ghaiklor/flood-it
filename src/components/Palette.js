@@ -22,9 +22,9 @@ const mapDispatchToProps = dispatch => ({
 export class Palette extends React.Component {
   createTile(width, height, color, colorIndex) {
     const {currentColorIndex, onPress} = this.props;
-    const tile = <Tile key={colorIndex} style={TILE_STYLE} color={color} width={width} height={height}/>;
-    const touchableTile = <Tile key={colorIndex} style={TILE_STYLE} color={color} width={width} height={height}
-                                onPress={onPress.bind(this, colorIndex)}/>;
+    const props = {key: colorIndex, style: TILE_STYLE, color, width, height};
+    const tile = <Tile {...props}/>;
+    const touchableTile = <Tile {...props} onPress={onPress.bind(this, colorIndex)}/>;
 
     return currentColorIndex === colorIndex ? tile : touchableTile;
   }
