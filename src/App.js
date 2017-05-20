@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import Grid from './components/Grid';
-import MovesCounter from './components/MovesCounter';
-import NewGameButton from './components/NewGameButton';
+import Stats from './components/Stats';
+import NewGameButton from './components/NewGame';
 import Palette from './components/Palette';
 
 class App extends React.Component {
@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <MovesCounter/>
+          <Stats/>
           <NewGameButton/>
         </View>
 
@@ -32,24 +32,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#EEE4DA',
   },
   header: {
-    flex: 0,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: 25,
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingBottom: 10
+    marginTop: 25,
+    marginLeft: 15,
+    marginRight: 15,
+    marginBottom: 10,
   },
   game: {
-    flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   palette: {
     flex: 1,
     justifyContent: 'flex-end',
-    alignItems: 'center'
+    alignItems: 'center',
   }
 });
 

@@ -5,7 +5,7 @@ import {runColor} from '../actions';
 import Tile from '../components/Tile';
 import COLORS from '../constants/colors';
 
-const MAX_HEIGHT = 80;
+const PALETTE_HEIGHT = 80;
 const {width: WINDOWS_WIDTH} = Dimensions.get('window');
 
 const mapStateToProps = state => ({
@@ -18,22 +18,26 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class Palette extends React.Component {
-  createTile(size, color, colorIndex) {
+  createTile(width, height, color, colorIndex) {
     const {currentColorIndex, onPress} = this.props;
+    const tile = <Tile key={colorIndex} style={TILE_STYLE} color={color} width={width} height={height}/>;
+    const touchableTile = <Tile key={colorIndex} style={TILE_STYLE} color={color} width={width} height={height}
+                                onPress={onPress.bind(this, colorIndex)}/>;
 
-    if (currentColorIndex === colorIndex) return <Tile key={colorIndex} color={color} size={size}/>;
-
-    return <Tile key={colorIndex} color={color} size={size} onPress={onPress.bind(this, colorIndex)}/>;
+    return currentColorIndex === colorIndex ? tile : touchableTile;
   }
 
   render() {
     const {colorsCount} = this.props;
     const colors = COLORS.slice(0, colorsCount);
-    const tileSize = Math.min(MAX_HEIGHT, WINDOWS_WIDTH / colors.length);
-    const tiles = colors.map(this.createTile.bind(this, tileSize));
+    const tileWidth = Math.ceil(WINDOWS_WIDTH / colors.length);
+    const tiles = colors.map(this.createTile.bind(this, tileWidth, PALETTE_HEIGHT));
 
-    return <View style={{flexDirection: 'row'}}>{tiles}</View>;
+    return <View style={PALETTE_STYLE}>{tiles}</View>;
   }
 }
+
+const TILE_STYLE = {borderTopLeftRadius: 15, borderTopRightRadius: 15};
+const PALETTE_STYLE = {flexDirection: 'row'};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Palette);

@@ -4,19 +4,19 @@ import {connect} from 'react-redux';
 import Tile from '../components/Tile';
 import COLORS from '../constants/colors';
 
-const {width: WINDOW_WIDTH} = Dimensions.get('window');
+const {width: WINDOW_WIDTH, height: WINDOW_HEIGHT} = Dimensions.get('window');
 
 const mapStateToProps = state => ({
   field: state.field
 });
 
 class Grid extends React.Component {
-  makeRow(index, tiles) {
+  makeRow(rowIndex, tiles) {
     const size = Math.sqrt(tiles.length);
 
     return (
-      <View key={index} style={{flexDirection: 'row'}}>
-        {tiles.slice(index * size, index * size + size)}
+      <View key={rowIndex} style={{flexDirection: 'row'}}>
+        {tiles.slice(rowIndex * size, rowIndex * size + size)}
       </View>
     )
   }
@@ -24,8 +24,9 @@ class Grid extends React.Component {
   render() {
     const {field} = this.props;
     const size = Math.sqrt(field.length);
-    const tileWidth = WINDOW_WIDTH / size;
-    const tiles = field.map((colorIndex, i) => <Tile key={i} color={COLORS[colorIndex]} size={tileWidth}/>);
+    const width = Math.ceil(WINDOW_WIDTH / size);
+    const height = Math.ceil(WINDOW_HEIGHT / size / 2);
+    const tiles = field.map((cell, i) => <Tile key={i} color={COLORS[cell]} width={width} height={height}/>);
 
     return (
       <View style={{flexDirection: 'column'}}>

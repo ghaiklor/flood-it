@@ -3,9 +3,9 @@ import {View, TouchableOpacity} from 'react-native';
 
 class Tile extends React.Component {
   render() {
-    const {color, size, onPress} = this.props;
-    const style = {backgroundColor: color, width: size, height: size};
-    const tile = <View style={style}/>;
+    const {color, width, height, style, onPress} = this.props;
+    const mixedStyle = {...style, backgroundColor: color, width, height};
+    const tile = <View style={mixedStyle}/>;
     const touchableTile = <TouchableOpacity onPress={onPress}>{tile}</TouchableOpacity>;
 
     return onPress ? touchableTile : tile;
