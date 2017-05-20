@@ -13,9 +13,9 @@ It will start fill a field with selected color, where start point is left upper 
 
 ## Screenshots
 
-|     |     |     |
-|:---:|:---:|:---:|
-| ![Flood It!](https://cloud.githubusercontent.com/assets/3625244/26276662/26fc5a5a-3d84-11e7-949f-b053b5d8f6e4.png) | ![Flood It!](https://cloud.githubusercontent.com/assets/3625244/26276661/26d0a54a-3d84-11e7-9861-2cb3598e5c11.png) | ![Flood It!](https://cloud.githubusercontent.com/assets/3625244/26276646/c705c82a-3d83-11e7-80a6-cde73bde6d65.png) |
+| Easy | Hard | In Game |
+|:----:|:----:|:-------:|
+| ![Flood It!](https://cloud.githubusercontent.com/assets/3625244/26276662/26fc5a5a-3d84-11e7-949f-b053b5d8f6e4.png) | ![Flood It!](https://cloud.githubusercontent.com/assets/3625244/26276661/26d0a54a-3d84-11e7-9861-2cb3598e5c11.png) | ![Flood It!](https://cloud.githubusercontent.com/assets/3625244/26276838/69e1a1be-3d88-11e7-8219-3acc1acbd73a.png) |
 
 ## Technical stack
 
