@@ -10,6 +10,6 @@ it('Should properly export all colors in a game', () => {
     '#800080',
     '#00FFFF',
     '#6666FF',
-    '#FF00FF',
+    '#FF00FF'
   ]);
 });

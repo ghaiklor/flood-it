@@ -12,6 +12,6 @@ it('Should properly render stats component', () => {
   assert.deepEqual(tree.props.style, {
     fontWeight: 'bold',
     fontSize: 20,
-    color: 'black',
+    color: 'black'
   });
 });
