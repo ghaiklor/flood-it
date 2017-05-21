@@ -1,5 +1,8 @@
 {
   "extends": "react",
+  "env": {
+    "node": true
+  },
   "rules": {
     "indent": [
       "error",
