@@ -12,22 +12,8 @@ const store = createStore(reducer, undefined, compose(applyMiddleware(thunk), au
 persistStore(store, {storage: AsyncStorage});
 
 class FloodIt extends React.Component {
-  state = {
-    appIsReady: false
-  };
-
   componentWillMount() {
     return this._loadAssetsAsync();
-  }
-
-  render() {
-    if (!this.state.appIsReady) return <Expo.AppLoading/>;
-
-    return (
-      <Provider store={store}>
-        <App/>
-      </Provider>
-    );
   }
 
   async _loadAssetsAsync() {
@@ -39,6 +25,20 @@ class FloodIt extends React.Component {
     await Promise.all([...localImages]);
 
     this.setState({appIsReady: true});
+  }
+
+  state = {
+    appIsReady: false
+  };
+
+  render() {
+    if (!this.state.appIsReady) return <Expo.AppLoading/>;
+
+    return (
+      <Provider store={store}>
+        <App/>
+      </Provider>
+    );
   }
 }
 
