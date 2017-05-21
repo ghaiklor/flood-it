@@ -9,7 +9,7 @@
     "build": "npm run build:android && npm run build:ios",
     "build:android": "exp build:android",
     "build:ios": "exp build:ios",
-    "lint": "eslint src/**/*.js __tests__/**/*.js",
+    "lint": "eslint __tests__/ src/ --ext .js",
     "login": "exp login",
     "start": "exp start",
     "status": "exp build:status",
