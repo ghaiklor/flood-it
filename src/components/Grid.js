@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Dimensions} from 'react-native';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 import Tile from '../components/Tile';
 import COLORS from '../constants/colors';
 
@@ -18,7 +19,7 @@ export class Grid extends React.Component {
       <View key={rowIndex} style={{flexDirection: 'row'}}>
         {tiles.slice(rowIndex * size, rowIndex * size + size)}
       </View>
-    )
+    );
   }
 
   makeGrid(size, tiles) {
@@ -36,5 +37,9 @@ export class Grid extends React.Component {
     return <View style={{flexDirection: 'column'}}>{this.makeGrid(size, tiles)}</View>;
   }
 }
+
+Grid.propTypes = {
+  field: PropTypes.array.isRequired
+};
 
 export default connect(mapStateToProps)(Grid);

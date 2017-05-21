@@ -6,5 +6,5 @@ export default [
   '#800080',
   '#00FFFF',
   '#6666FF',
-  '#FF00FF',
+  '#FF00FF'
 ];

@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, TouchableOpacity} from 'react-native';
+import PropTypes from 'prop-types';
 
 export class Tile extends React.Component {
   render() {
@@ -11,5 +12,13 @@ export class Tile extends React.Component {
     return onPress ? touchableTile : tile;
   }
 }
+
+Tile.propTypes = {
+  color: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  style: PropTypes.object,
+  onPress: PropTypes.func
+};
 
 export default Tile;

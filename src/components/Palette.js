@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Dimensions} from 'react-native';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 import {runColor} from '../actions';
 import Tile from '../components/Tile';
 import COLORS from '../constants/colors';
@@ -38,5 +39,11 @@ export class Palette extends React.Component {
     return <View style={PALETTE_STYLE}>{tiles}</View>;
   }
 }
+
+Palette.propTypes = {
+  colorsCount: PropTypes.number.isRequired,
+  currentColorIndex: PropTypes.number,
+  onPress: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Palette);

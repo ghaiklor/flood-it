@@ -16,7 +16,7 @@ export function runColor(colorIndex) {
 
     if (done === 100) return dispatch(increaseDifficulty()) && dispatch(newGame());
     if (spentMoves >= maxMoves) return dispatch(decreaseDifficulty()) && dispatch(newGame());
-  }
+  };
 }
 
 /**

@@ -5,7 +5,8 @@ import {NewGame} from '../../../src/components/NewGame';
 import renderer from 'react-test-renderer';
 
 it('Should properly render new game button', () => {
-  const tree = renderer.create(<NewGame/>).toJSON();
+  const nop = () => true;
+  const tree = renderer.create(<NewGame onPress={nop}/>).toJSON();
 
   assert.equal(tree.type, 'View');
   assert.equal(tree.children.length, 1);
