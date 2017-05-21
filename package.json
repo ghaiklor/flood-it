@@ -9,6 +9,7 @@
     "build": "npm run build:android && npm run build:ios",
     "build:android": "exp build:android",
     "build:ios": "exp build:ios",
+    "lint": "eslint src/**/*.js",
     "login": "exp login",
     "start": "exp start",
     "status": "exp build:status",
@@ -24,7 +25,11 @@
     "redux-thunk": "2.2.0"
   },
   "devDependencies": {
+    "babel-eslint": "7.2.3",
     "chai": "3.5.0",
+    "eslint": "3.19.0",
+    "eslint-config-react": "1.1.7",
+    "eslint-plugin-react": "7.0.1",
     "exp": "41.0.0",
     "jest-expo": "1.0.1",
     "react-test-renderer": "15.5.4",
