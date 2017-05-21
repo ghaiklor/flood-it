@@ -5,14 +5,42 @@ import NewGameButton from './components/NewGame';
 import Palette from './components/Palette';
 import Stats from './components/Stats';
 
-export class App extends React.Component {
-  state = {
-    opacity: new Animated.Value(0)
-  };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
+    backgroundColor: '#EEE4DA'
+  },
+  header: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingTop: 25,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingBottom: 10
+  },
+  game: {
+    flex: 8
+  },
+  palette: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+  }
+});
 
+export class App extends React.Component {
   componentDidMount() {
     Animated.timing(this.state.opacity, {toValue: 1, duration: 1000, useNativeDriver: true}).start();
   }
+
+  state = {
+    opacity: new Animated.Value(0)
+  };
 
   render() {
     return (
@@ -30,36 +58,8 @@ export class App extends React.Component {
           <Palette/>
         </View>
       </Animated.View>
-    )
+    );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'stretch',
-    backgroundColor: '#EEE4DA',
-  },
-  header: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingTop: 25,
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingBottom: 10,
-  },
-  game: {
-    flex: 8,
-  },
-  palette: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  }
-});
 
 export default App;
