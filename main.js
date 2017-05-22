@@ -9,11 +9,13 @@ import reducer from './src/reducers';
 import App from './src/App';
 
 const store = createStore(reducer, undefined, compose(applyMiddleware(thunk), autoRehydrate()));
-persistStore(store, {storage: AsyncStorage});
 
 class FloodIt extends React.Component {
-  componentWillMount() {
-    return this._loadAssetsAsync();
+  async componentWillMount() {
+    await this._loadAssetsAsync();
+    await this._persistStore();
+
+    this.setState({appIsReady: true});
   }
 
   async _loadAssetsAsync() {
@@ -22,9 +24,11 @@ class FloodIt extends React.Component {
       require('./assets/icons/new-game.png')
     ].map(image => Expo.Asset.fromModule(image).downloadAsync());
 
-    await Promise.all([...localImages]);
+    return await Promise.all([...localImages]);
+  }
 
-    this.setState({appIsReady: true});
+  async _persistStore() {
+    return new Promise(resolve => persistStore(store, {storage: AsyncStorage}, resolve));
   }
 
   state = {
