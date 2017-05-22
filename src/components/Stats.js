@@ -33,5 +33,3 @@ Stats.propTypes = {
 };
 
 export default connect(mapStateToProps)(Stats);
-
-
