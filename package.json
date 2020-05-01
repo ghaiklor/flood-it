@@ -13,7 +13,9 @@
     "login": "exp login",
     "start": "exp start",
     "status": "exp build:status",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "expo": "17.0.0",
@@ -23,7 +25,8 @@
     "react-redux": "5.1.2",
     "redux": "3.6.0",
     "redux-persist": "4.10.2",
-    "redux-thunk": "2.3.0"
+    "redux-thunk": "2.3.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-eslint": "7.2.3",
@@ -45,5 +48,6 @@
       "lint",
       "test"
     ]
-  }
+  },
+  "snyk": true
 }
